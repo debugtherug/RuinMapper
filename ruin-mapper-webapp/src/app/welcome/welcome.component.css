@@ -1,0 +1,65 @@
+/* ---- Welcome card ---- */
+.welcome-page {
+  background: rgba(255, 255, 255, 0.15);   /* glassy white */
+  padding: 2.5rem 3rem;
+  border-radius: 18px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+  max-width: 480px;
+  width: 90%;
+  text-align: left;
+}
+
+/* ---- Headline ---- */
+.welcome-page h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2rem;
+  letter-spacing: 0.05em;
+}
+
+/* ---- Form layout ---- */
+.welcome-page form {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Spacing between form blocks */
+.welcome-page form > * + * {
+  margin-top: 1.25rem;
+}
+
+/* ---- Select dropdown ---- */
+select {
+  margin-top: 0.4rem;
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.9);
+  color: #222;
+  outline: none;
+}
+
+/* ---- Radio buttons ---- */
+input[type="radio"] {
+  accent-color: #c97e16;      /* modern browsers */
+  transform: scale(1.1);
+  margin-right: 0.35rem;
+}
+label { cursor: pointer; }
+
+/* ---- Mobile tweaks ---- */
+@media (max-width: 480px) {
+  .welcome-page { padding: 2rem; }
+  .welcome-page h1 { font-size: 2rem; }
+}
+
+/* change “radio” → “checkbox” */
+input[type='checkbox'] {
+  accent-color: #c97e16;
+  transform: scale(1.1);
+  margin-right: 0.35rem;
+}

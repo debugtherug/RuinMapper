@@ -1,0 +1,39 @@
+<div class="welcome-page">
+  <h1>Ruin Mapper</h1>
+
+  <form [formGroup]="welcomeForm" (ngSubmit)="submit()">
+    <label>
+      New to our website?
+      <br>
+      <select formControlName="newUser">
+        <option value="" selected disabled hidden>-- Select an option --</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+      </select>
+    </label>
+    
+    <br>
+    What type of material are you interested in tracking?
+    <br><br>
+
+    <div formArrayName="materials">
+      <label *ngFor="let m of materialOptions; index as i">
+        <input
+          type="checkbox"
+          [value]="m.value"
+          (change)="onMaterialToggle($event)"
+        />
+        {{ m.label }}
+      </label>
+    </div>
+
+    <br>
+    <button type="submit" [disabled]="welcomeForm.invalid">
+      Continue
+    </button>
+
+    <div class="error" *ngIf="materials.invalid && (materials.dirty || materials.touched)">
+      Please select between 1 and 3 options.
+    </div>
+  </form>
+</div>

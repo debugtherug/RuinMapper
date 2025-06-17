@@ -1,1 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
+/* ---------- Reset / helpers ---------- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ---------- Google Font ---------- */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap');
+
+/* ---------- Page background ---------- */
+body {
+  font-family: 'Montserrat', sans-serif;
+  min-height: 100vh;
+  display: flex;                 /* centers the welcome card */
+  justify-content: center;
+  align-items: center;
+
+  /* Swap this URL for your own image later */
+  background: url('https://images.unsplash.com/photo-1505664063603-28e48f0db3e2?auto=format&fit=crop&w=1350&q=80')
+              center / cover fixed no-repeat;
+  color: #fff;
+  position: relative;
+}
+
+/* Dark overlay so text pops against bright images */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: -1;
+}
